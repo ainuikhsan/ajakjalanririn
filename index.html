@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajak Jalan</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Hei Ririn, mau jalan sama aku?</h1>
+        <div class="buttons">
+            <button id="yesBtn">Mau</button>
+            <button id="noBtn">Gak Mau</button>
+        </div>
+    </div>
+
+    <script>
+        // Fungsi untuk memindahkan tombol 'Gak Mau' jika dihover
+        const noBtn = document.getElementById('noBtn');
+        noBtn.addEventListener('mouseenter', () => {
+            const randomX = Math.floor(Math.random() * (window.innerWidth - noBtn.offsetWidth));
+            const randomY = Math.floor(Math.random() * (window.innerHeight - noBtn.offsetHeight));
+            noBtn.style.position = 'absolute';
+            noBtn.style.left = randomX + 'px';
+            noBtn.style.top = randomY + 'px';
+        });
+
+        // Fungsi jika tombol 'Mau' ditekan
+        const yesBtn = document.getElementById('yesBtn');
+        yesBtn.addEventListener('click', () => {
+            alert('Yay! Kita jalan bareng!');
+        });
+    </script>
+</body>
+</html>
